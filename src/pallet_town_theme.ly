@@ -245,24 +245,28 @@ modern =
 
   violinI = \relative {
     \clef treble \key g \major \time 4/4
+    
   }
 
   violinII = \relative {
     \clef treble \key g \major \time 4/4
+    b2' g4 a4 | g2 g2 | g2 a4 g4 | g2 g4 fis4 | g2 g4 a4 | g2 g2 | g2 | a4 fis4 g2|    
   }
 
   viola = \relative {
-    \clef alto \key g \major \time 4/4
+    \clef treble \key g \major \time 4/4
+    d2' c4 c4 | b2 b2 | b2 c4 c4 | d2 c4 a4 | d2 c4 c4 | b2 b2 | c2 c4 d4 | d2
   }
 
   cello = \relative {
     \clef bass \key g \major \time 4/4
-  }
+    g2 g4 d4 | d2 d2 | c2 c4 c4| d2 c4 d4 | d2 g4 d4 | d2 g2 | g2 d4 d4 | d2
+    }
 
-  contrabass = \relative c {
+  contrabass = \relative {
     \clef bass \key g \major \time 4/4
     \transposition c
-    g2 e2 | g1 | e1
+    g2 e4 fis4 | g1 | e2 fis4 e4 |  g2 e4 d4 | g2 e4 fis4 | g1 | e2 fis4 a4 | g2
   }
 
   #(set-global-staff-size 10)
@@ -399,28 +403,33 @@ modern =
         \new Staff = "violin I" {
           \set Staff.instrumentName = "Violin I"
           \set Staff.shortInstrumentName = "Vn. I"
+          \set Staff.midiInstrument = "violin"
         \violinI
         }
         \new Staff = "violin II" {
           \set Staff.instrumentName = "Violin II"
           \set Staff.shortInstrumentName = "Vn. II"
+          \set Staff.midiInstrument = "violin"
         \violinII
         }
       >>
       \new Staff = "viola" {
         \set Staff.instrumentName = "Viola"
         \set Staff.shortInstrumentName = "Vl."
+        \set Staff.midiInstrument = "viola"
       \viola
       }
       \new SquareStaff = "Cello and Bass" <<
         \new Staff = "violoncello" {
           \set Staff.instrumentName = "Violoncello"
           \set Staff.shortInstrumentName = "Vc."
+          \set Staff.midiInstrument = "cello"
         \cello
         }
         \new Staff = "contrabass" {
           \set Staff.instrumentName = "Contrabass"
           \set Staff.shortInstrumentName = "Cb."
+          \set Staff.midiInstrument = "contrabass"
         \contrabass
         }
         >>
